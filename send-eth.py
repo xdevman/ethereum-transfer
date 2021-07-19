@@ -15,7 +15,7 @@ infura_url= "https://mainnet.infura.io/"  #signup infura.io and add project id
 web3 = Web3(Web3.HTTPProvider(infura_url))
 
 
-# check connecting web3 to Ganache
+#connecting web3 to Ganache
 if  web3.isConnected() == True:
     print("web3 connected...\n")
 else :
@@ -24,9 +24,9 @@ else :
 
 #accounts value and private key
 
-account_1 = "" ## add public key for first account (sender)
-account_2 = "" ## add public key for second account (reciver)
-private_key = "" ## add ETH private key for first account (sender)
+account_1 = "" ## add public key from first account (sender)
+account_2 = "" ## add public key from second account (reciver)
+private_key = "" ## add ETH private key from first account (sender)
 
 balance=0
 gas_fee = 21000*35
