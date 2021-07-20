@@ -1,7 +1,7 @@
 # ethereum-transfer
 send ethereum from wallet to new wallet with python web3
 
-1- signup on https://infura.io/ and make new project then add project id to 'send-eth.py'
+1- signup on https://infura.io/ and Create new project then add project id to 'send-eth.py'
 
 2- add public key and private key 
 
