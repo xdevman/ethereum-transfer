@@ -65,7 +65,7 @@ def build_transaction():
     tx = {
         'nonce':nonce,
         'to':account_2,
-        'value':web3.toWei(0.007,'ether'),
+        'value':web3.toWei(balance,'ether'),
         'gas':21000,
         'gasPrice':web3.toWei('56','gwei')
     }
