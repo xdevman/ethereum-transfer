@@ -7,11 +7,11 @@ import requests
 from decimal import *
 
 
-# ganache_url = "HTTP://127.0.0.1:7545"
-# web3 = Web3(Web3.HTTPProvider(ganache_url))
+ganache_url = "HTTP://127.0.0.1:8545"
+web3 = Web3(Web3.HTTPProvider(ganache_url))
 
-infura_url= "https://mainnet.infura.io/v3/b68a422fe86e44c0ab9fdc4aea947b15"
-web3 = Web3(Web3.HTTPProvider(infura_url))
+# infura_url= "https://mainnet.infura.io/v3/8a422fe86e44c0ab9fdc4aea947b15b6"
+# web3 = Web3(Web3.HTTPProvider(infura_url))
 
 
 # check connecting web3 to Ganache
@@ -33,15 +33,15 @@ else :
 
 #accounts value and private key
 print("Done gas")
-account_1 = ""
-account_2 = ""
-private_key = ""
+account_1 = "0x242F5c9a1D42e962A1c6B479349FFAf188163757"
+account_2 = "0x858C1eAC770C883f6FB4496B856023A7A483b6B6"
+private_key = "3ddc37fdcd6ba99f9a16206467e459d4009ab30b3b4909a5ba0ca50ea40d2624"
 
 balance=0
 gas_fee = 21000*56
 gas_fee = Decimal(gas_fee)
 gas_fee = web3.fromWei(gas_fee,'Gwei')
-print("get balance...")
+print("get balance...","gas fee is : ", gas_fee)
 def get_balance_loop():
     balance=0
     while True:
@@ -58,7 +58,7 @@ def get_balance_loop():
         
 
 
-def build_transaction():
+def build_transaction(balance):
     #get nonce number
     nonce = web3.eth.getTransactionCount(account_1)
 #build transaction
