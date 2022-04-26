@@ -6,3 +6,8 @@ send ethereum from wallet to new wallet with python web3
 2- add public key and private key 
 
 3- run 
+
+
+if you want use BSC you can check this repository : 
+
+https://github.com/xdevman/bnb-transfer
