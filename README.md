@@ -23,7 +23,7 @@ The Ethereum Sender project allows you to automatically send ETH from one wallet
 3. Open the `config.py` file and update the following information:
 - `private_key`: Your Ethereum wallet private key.
 - `recipient_address`: The public key of the recipient's Ethereum wallet.
-- `ganache_mode`: Set this to True if you want to use Ganache for testing purposes, or False to use Infura for the mainnet.
+- `ganache_mode`: Set this to `True` if you want to use Ganache for testing purposes, or `False` to use Infura for the mainnet.
 Add your Infura API key to the infura_apikey variable in the config.py file.
 
 Save the changes in the config.py file.
