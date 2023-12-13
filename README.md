@@ -23,12 +23,17 @@ The Ethereum Sender project allows you to automatically send ETH from one wallet
 3. Open the `config.py` file and update the following information:
 - `private_key`: Your Ethereum wallet private key.
 - `recipient_address`: The public key of the recipient's Ethereum wallet.
-- `threshold_amount`: The minimum ETH balance required to initiate a transfer.
+- `ganache_mode`: Set this to True if you want to use Ganache for testing purposes, or False to use Infura for the mainnet.
+Add your Infura API key to the infura_apikey variable in the config.py file.
+
+Save the changes in the config.py file.
+
+Run the main script main.py using the command:
 
 ## Usage
 
 1. Make sure you have configured the `config.py` file with the correct information.
-2. Run the script using the following command: python eth_sender.py
+2. Run the script using the following command: python main.py
 3. The script will start monitoring the specified wallet for incoming ETH.
 4. When the wallet balance reaches the configured threshold amount, the script will initiate a transfer to the recipient's wallet automatically.
 5. The script will continue to monitor the wallet balance and initiate transfers as necessary.
