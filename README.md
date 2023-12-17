@@ -1,6 +1,7 @@
 # Ethereum Sender
 
 The Ethereum Sender project allows you to automatically send ETH from one wallet to another. By providing a private key for your ETH wallet and a recipient's public key, the script will monitor the wallet for incoming ETH and automatically initiate transfers to the specified recipient.
+For more detailed information, you can read [my blog post](https://sobhan.hashnode.dev/unveiling-ethereum-transfer-a-deep-dive-into-sweeper-bots-for-ethereum) dedicated to this project.
 
 ## Features
 
