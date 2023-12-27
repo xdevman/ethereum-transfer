@@ -43,11 +43,6 @@ Run the main script main.py using the command:
 
 Contributions to this project are highly appreciated. You can contribute by submitting pull requests or by reporting issues and suggestions for improvement. You can also ask your questions in the Issues section.
 
-## License
-
-This project is licensed under the [MIT License](LICENSE). For more information about the license, please refer to the `LICENSE` file.
-
 ## Contact
-
 - For more information, you can visit [my website](http://sobhan.hashnode.dev).
 - For questions and suggestions, you can contact me via email: xd3vman@gmail.com
