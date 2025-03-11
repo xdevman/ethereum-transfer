@@ -2,4 +2,3 @@ eth-utils==2.3.1
 web3==7.7.0
 python-dotenv
 loguru
-ruff
